@@ -160,8 +160,11 @@
 
     <div class="card">
       <h3>Request a callback</h3>
+      <div id="sentMsg" style="display:none;padding:10px;border:1px solid rgba(57,217,138,.35);border-radius:14px;background:rgba(255,255,255,.04);margin-bottom:10px;">
+  ✅ Request sent. A local team should contact you soon.
+</div>
 
-      <form method="POST" action="https://YOUR-BACKEND-URL/api/lead">
+     <form method="POST" action="https://YOUR-RENDER-SERVICE.onrender.com/api/lead">
         <input type="hidden" name="niche" value="Water Damage Restoration">
         <input type="hidden" name="city" value="Phoenix, AZ">
 
@@ -215,7 +218,15 @@
 </div>
 
 <script>
+  // Footer year
   document.getElementById("y").textContent = new Date().getFullYear();
+
+  // Show success message after form submit
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("sent") === "1") {
+    const msg = document.getElementById("sentMsg");
+    if (msg) msg.style.display = "block";
+  }
 </script>
 </body>
 </html>
