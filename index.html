@@ -101,13 +101,25 @@
     textarea{min-height:100px;resize:vertical}
     .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
     @media(max-width:520px){.row{grid-template-columns:1fr}}
-    .consent{
-      display:flex;gap:10px;align-items:flex-start;
-      margin-top:10px;padding:10px;
-      border-radius:14px;border:1px solid var(--border);
-      background:rgba(255,255,255,.03);
-      font-size:12px;color:var(--muted);
-    }
+   .consent{
+  display:grid;
+  grid-template-columns: 24px 1fr;
+  gap:10px;
+  align-items:start;
+  margin-top:10px;
+  padding:10px;
+  border-radius:14px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.03);
+  font-size:12px;
+  color:var(--muted);
+}
+
+.consent input{
+  width:18px;
+  height:18px;
+  margin-top:3px;
+}
     footer{
       margin-top:20px;
       font-size:12px;color:var(--muted);
