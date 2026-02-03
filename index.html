@@ -93,15 +93,19 @@
     .mini b{display:block;margin-bottom:4px}
     .mini span{color:var(--muted);font-size:13px}
     label{font-size:13px;color:var(--muted)}
-    input,textarea{
-      width:100%;margin-top:6px;padding:12px;
-      border-radius:12px;border:1px solid var(--border);
-      background:rgba(10,16,30,.7);color:var(--text);
-    }
+   input:not([type="checkbox"]):not([type="hidden"]), textarea{
+  width:100%;
+  margin-top:6px;
+  padding:12px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background:rgba(10,16,30,.7);
+  color:var(--text);
+}
     textarea{min-height:100px;resize:vertical}
     .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
     @media(max-width:520px){.row{grid-template-columns:1fr}}
-   .consent{
+ .consent{
   display:grid;
   grid-template-columns: 24px 1fr;
   gap:10px;
@@ -115,10 +119,12 @@
   color:var(--muted);
 }
 
-.consent input{
+.consent input[type="checkbox"]{
   width:18px;
   height:18px;
-  margin-top:3px;
+  margin:2px 0 0 0;
+  padding:0;
+  justify-self:start;
 }
     footer{
       margin-top:20px;
